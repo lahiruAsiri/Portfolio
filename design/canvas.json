@@ -1,0 +1,9 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 6900, "title": "Portfolio — full page (B/W)" }
+  ],
+  "annotations": [
+    { "id": "brief", "x": 1540, "y": 0, "w": 420, "text": "Full hi-fi single-page design.\n\nWhite sections = black content. Inverted sections (Stack, Projects, Design Skills, Footer) = black bg, white content.\n\nFloating rounded pill nav, hero with your B/W portrait (grey placeholder for now), then section by section: About, Tech Stack, Experience + Education, Projects (6), Certifications, Design Skills, Contact.\n\nSaira typeface throughout. Motion: fade-up on load, skill ticker, spinning mark, hover-lift cards. Once approved this gets built as a real Next.js site." }
+  ],
+  "launch": { "view": "focused", "file": "Main.dc.html" }
+}

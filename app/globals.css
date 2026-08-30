@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: #0a0a0a;
+  --color-paper: #ffffff;
+  --font-sans: var(--font-saira), "Arial Narrow", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #ffffff;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .anim-ticker,
+  .anim-spin,
+  .anim-bob {
+    animation: none !important;
+  }
+}
+
+/* ---------- layout helpers ---------- */
+.wrap {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+@media (min-width: 768px) {
+  .wrap {
+    padding-inline: 48px;
+  }
+}
+
+.section {
+  padding-block: 88px;
+  scroll-margin-top: 96px;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-block: 120px;
+  }
+}
+
+.inv {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.55;
+}
+
+.h2 {
+  font-weight: 800;
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: 16px 0 0;
+}
+
+.lead {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 16px 26px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-solid {
+  background: #0a0a0a;
+  color: #fff;
+  border-color: #0a0a0a;
+}
+.btn-solid:hover {
+  background: #fff;
+  color: #0a0a0a;
+}
+.inv .btn-solid {
+  background: #fff;
+  color: #0a0a0a;
+  border-color: #fff;
+}
+.inv .btn-solid:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.card {
+  border: 1px solid currentColor;
+  border-radius: 22px;
+  padding: 32px;
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.card-project:hover {
+  background: #fff;
+  color: #0a0a0a;
+}
+
+.portrait {
+  filter: grayscale(1) contrast(1.06);
+}
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- typewriter caret ---------- */
+.tw-caret {
+  display: inline-block;
+  margin-left: 0.06em;
+  font-weight: 300;
+  animation: caret-blink 1s steps(1, end) infinite;
+}
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tw-caret {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
+/* ---------- keyframes ---------- */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+.anim-ticker {
+  animation: ticker 28s linear infinite;
+}
+.anim-spin {
+  animation: spin 9s linear infinite;
+}
+.anim-bob {
+  animation: bob 1.8s ease-in-out infinite;
+}
