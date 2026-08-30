@@ -42,3 +42,6 @@ next-env.d.ts
 
 # design tool generated artifact
 /design/lahiru-asiri-portfolio.html
+
+# local tooling
+/.claude/
