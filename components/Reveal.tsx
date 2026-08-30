@@ -26,6 +26,18 @@ function useReveal() {
       setSeen(true);
     };
 
+    // Anything already within the first viewport on load reveals right away —
+    // this keeps above-the-fold content (the hero) from staying hidden until
+    // the user scrolls.
+    const vh = window.innerHeight || document.documentElement.clientHeight || 0;
+    if (vh > 0) {
+      const r = el.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) {
+        const id = requestAnimationFrame(show);
+        return () => cancelAnimationFrame(id);
+      }
+    }
+
     if (typeof IntersectionObserver === "undefined") {
       show();
       return;
@@ -41,8 +53,8 @@ function useReveal() {
           }
         }
       },
-      // start the animation once the element is ~12% into the viewport
-      { threshold: 0, rootMargin: "0px 0px -12% 0px" }
+      // start the animation once the element is ~10% into the viewport
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
     );
     io.observe(el);
 

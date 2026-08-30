@@ -20,6 +20,18 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${saira.variable} h-full antialiased`}>
+      <head>
+        {/* Don't let the browser restore a stale scroll position on refresh —
+            the page should always open at the top (unless a #hash targets a
+            section). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if('scrollRestoration' in history){history.scrollRestoration='manual';}" +
+              "if(!location.hash){window.scrollTo(0,0);}",
+          }}
+        />
+      </head>
       <body className="min-h-full">{children}</body>
     </html>
   );

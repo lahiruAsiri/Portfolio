@@ -1,9 +1,11 @@
 import { profile } from "@/lib/data";
+import SectionBg from "./SectionBg";
 import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
     <section id="contact" className="section">
+      <SectionBg />
       <div className="wrap text-center">
         <Reveal>
           <p className="eyebrow">07 — Contact</p>

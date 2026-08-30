@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { certifications } from "@/lib/data";
+import SectionBg from "./SectionBg";
 import Reveal, { RevealGroup, RevealItem } from "./Reveal";
 
 const INITIAL = 12;
@@ -14,6 +15,7 @@ export default function Certifications() {
 
   return (
     <section id="certs" className="section">
+      <SectionBg />
       <div className="wrap">
         <Reveal>
           <div>

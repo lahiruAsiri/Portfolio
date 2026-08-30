@@ -1,9 +1,11 @@
 import { education, experience } from "@/lib/data";
+import SectionBg from "./SectionBg";
 import Reveal, { RevealGroup, RevealItem } from "./Reveal";
 
 export default function Experience() {
   return (
     <section id="experience" className="section">
+      <SectionBg />
       <div className="wrap">
         <Reveal>
           <div>

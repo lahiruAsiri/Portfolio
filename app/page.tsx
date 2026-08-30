@@ -1,3 +1,4 @@
+import ClickRipple from "@/components/ClickRipple";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Ticker from "@/components/Ticker";
@@ -13,6 +14,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <ClickRipple />
       <Nav />
       <main>
         <Hero />

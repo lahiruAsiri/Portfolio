@@ -1,9 +1,11 @@
 import { about, stats } from "@/lib/data";
+import SectionBg from "./SectionBg";
 import Reveal, { RevealGroup, RevealItem } from "./Reveal";
 
 export default function About() {
   return (
     <section id="about" className="section">
+      <SectionBg />
       <div className="wrap grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <Reveal>
           <div>
