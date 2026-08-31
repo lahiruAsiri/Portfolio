@@ -244,21 +244,21 @@ export const projects = [
 ];
 
 export const certifications = [
-  { title: "AI/ML Engineer — Stage 1", meta: "SLIIT · 2024" },
-  { title: "Programming in Python", meta: "Univ. of Moratuwa · 2024" },
-  { title: "Web Development", meta: "Univ. of Moratuwa · 2024" },
-  { title: "JS Algorithms & Data Structures", meta: "freeCodeCamp · 2024" },
-  { title: "Responsive Web Design", meta: "freeCodeCamp · 2024" },
-  { title: "Problem Solving", meta: "HackerRank · 2024" },
-  { title: "Java (Basic)", meta: "HackerRank · 2024" },
-  { title: "JavaScript (Basic)", meta: "HackerRank · 2024" },
-  { title: "Python (Basic)", meta: "HackerRank · 2024" },
-  { title: "CSS (Basic)", meta: "HackerRank · 2024" },
-  { title: "SQL Intermediate", meta: "Sololearn · 2024" },
-  { title: "JavaScript Intermediate", meta: "Sololearn · 2024" },
-  { title: "Java Intermediate", meta: "Sololearn · 2024" },
-  { title: "Angular", meta: "Sololearn · 2024" },
-  { title: "Front-end for Beginners", meta: "Sololearn · 2024" },
+  { title: "AI/ML Engineer — Stage 1", meta: "SLIIT · 2024", image: "/certificates/ai-ml-engineer-stage-1.jpg" },
+  { title: "Programming in Python", meta: "Univ. of Moratuwa · 2024", image: "/certificates/programming-in-python.jpg" },
+  { title: "Web Development", meta: "Univ. of Moratuwa · 2024", image: "/certificates/web-development.jpg" },
+  { title: "JS Algorithms & Data Structures", meta: "freeCodeCamp · 2024", image: "/certificates/js-algorithms-data-structures.jpg" },
+  { title: "Responsive Web Design", meta: "freeCodeCamp · 2024", image: "/certificates/responsive-web-design.jpg" },
+  { title: "Problem Solving", meta: "HackerRank · 2024", image: "/certificates/problem-solving.jpg" },
+  { title: "Java (Basic)", meta: "HackerRank · 2024", image: "/certificates/java-basic.jpg" },
+  { title: "JavaScript (Basic)", meta: "HackerRank · 2024", image: "/certificates/javascript-basic.jpg" },
+  { title: "Python (Basic)", meta: "HackerRank · 2024", image: "/certificates/python-basic.jpg" },
+  { title: "CSS (Basic)", meta: "HackerRank · 2024", image: "/certificates/css-basic.jpg" },
+  { title: "SQL Intermediate", meta: "Sololearn · 2024", image: "/certificates/sql-intermediate.jpg" },
+  { title: "JavaScript Intermediate", meta: "Sololearn · 2024", image: "/certificates/javascript-intermediate.jpg" },
+  { title: "Java Intermediate", meta: "Sololearn · 2024", image: "/certificates/java-intermediate.jpg" },
+  { title: "Angular", meta: "Sololearn · 2024", image: "/certificates/angular.jpg" },
+  { title: "Front-end for Beginners", meta: "Sololearn · 2024", image: "/certificates/front-end-for-beginners.jpg" },
 ];
 
 export const designSkills = [
