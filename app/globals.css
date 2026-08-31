@@ -247,6 +247,153 @@ body {
   }
 }
 
+/* ---------- certificate cards + lightbox ---------- */
+.cert-card {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.24s ease, color 0.24s ease, box-shadow 0.24s ease;
+}
+.cert-card-btn {
+  display: block;
+  width: 100%;
+  padding: 28px;
+  text-align: left;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.cert-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 8px 15px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+/* desktop: collapse the button until hover so it doesn't add card height */
+@media (hover: hover) {
+  .cert-card .cert-view {
+    margin-top: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.22s ease, transform 0.24s ease,
+      max-height 0.28s ease, margin-top 0.28s ease, padding 0.28s ease;
+  }
+  .cert-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.35);
+  }
+  .cert-card:hover .cert-view {
+    margin-top: 16px;
+    max-height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-color: currentColor;
+    opacity: 1;
+    transform: none;
+  }
+}
+/* touch: no hover — always show the button, tap-feedback on press */
+@media (hover: none) {
+  .cert-card .cert-view {
+    opacity: 0.85;
+  }
+  .cert-card:active {
+    transform: scale(0.985);
+  }
+}
+
+.cert-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: clamp(14px, 4vw, 32px);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(10, 10, 10, 0);
+  transition: opacity 0.26s ease, background-color 0.26s ease;
+}
+.cert-preview[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+  background: rgba(10, 10, 10, 0.66);
+  backdrop-filter: blur(3px);
+}
+.cert-preview-panel {
+  position: relative;
+  max-width: min(820px, 100%);
+  max-height: 100%;
+  overflow: auto;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #0a0a0a;
+  border-radius: 14px;
+  box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.55);
+  transform: translateY(12px) scale(0.95);
+  transition: transform 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cert-preview[data-open="true"] .cert-preview-panel {
+  transform: none;
+}
+.cert-preview-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 74vh;
+  object-fit: contain;
+  border-radius: 6px;
+  filter: grayscale(1);
+  transition: filter 0.35s ease;
+}
+.cert-preview-panel:hover img {
+  filter: grayscale(0);
+}
+.cert-preview-cap {
+  padding: 12px 6px 4px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+}
+.cert-preview-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  padding: 8px;
+  color: #fff;
+  background: rgba(10, 10, 10, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cert-card,
+  .cert-card .cert-view,
+  .cert-preview,
+  .cert-preview-panel,
+  .cert-preview-panel img {
+    transition: none;
+  }
+}
+
 /* ---------- click ripple ---------- */
 .click-ripple {
   position: fixed;
