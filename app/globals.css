@@ -151,6 +151,22 @@ body {
   white-space: nowrap;
 }
 
+/* Tech Stack — pill hover: invert + lift */
+#stack .tag {
+  cursor: default;
+  transition: background-color 0.18s ease, color 0.18s ease,
+    transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#stack .tag:hover {
+  background: #fff;
+  color: #0a0a0a;
+  transform: translateY(-3px);
+}
+/* keep the card lift from fighting a tag hover */
+#stack .card:hover:has(.tag:hover) {
+  transform: none;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
