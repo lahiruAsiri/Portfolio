@@ -6,7 +6,7 @@ import { ArrowRight, ArrowDown, Asterisk } from "./icons";
 
 export default function Hero() {
   return (
-    <section id="home" className="scroll-mt-24 pt-20 pb-20 md:pt-32 md:pb-28">
+    <section id="home" className="scroll-mt-24 pt-28 pb-20 md:pt-32 md:pb-28">
       <div className="wrap grid items-center gap-12 md:grid-cols-[1.35fr_1fr] md:gap-16">
         <div>
           <Reveal>
