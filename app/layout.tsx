@@ -19,7 +19,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${saira.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${saira.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Don't let the browser restore a stale scroll position on refresh —
             the page should always open at the top (unless a #hash targets a
