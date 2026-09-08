@@ -52,8 +52,13 @@ export default function Experience() {
         <RevealGroup className="mt-6 grid gap-5 md:grid-cols-2">
           {education.map((ed) => (
             <RevealItem key={ed.title} className="card">
-              <div className="text-[20px] font-bold">{ed.title}</div>
-              <div className="eyebrow mt-2">{ed.meta}</div>
+              <div className="text-[18px] font-bold leading-snug md:text-[20px]">
+                {ed.title}
+              </div>
+              <div className="eyebrow mt-2">
+                {ed.meta}
+                {ed.period ? ` · ${ed.period}` : ""}
+              </div>
               <div className="lead mt-2.5 opacity-70">{ed.place}</div>
             </RevealItem>
           ))}
