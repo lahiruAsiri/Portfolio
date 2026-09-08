@@ -35,37 +35,48 @@ export default function Projects() {
         </div>
 
         <RevealGroup className="mt-14 grid gap-5 md:grid-cols-2">
-          {visible.map((p) => (
-            <RevealItem key={p.no}>
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noreferrer"
-                className="card card-project group block h-full"
-              >
-                <div className="flex items-baseline justify-between">
-                  <span className="text-[15px] font-extrabold opacity-40">
-                    {p.no}
-                  </span>
-                  <span className="eyebrow flex items-center gap-2">
-                    {p.kind}
-                    <ArrowUpRight className="opacity-0 transition group-hover:opacity-100" />
-                  </span>
-                </div>
-                <div className="mt-4 text-[26px] font-extrabold uppercase leading-tight md:text-[30px]">
-                  {p.title}
-                </div>
-                <p className="lead my-3 opacity-70">{p.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {p.tech.map((t) => (
-                    <span key={t} className="tag">
-                      {t}
+          {visible.map((p) => {
+            const links = p.repos ?? [{ label: "Repository", url: p.link }];
+            return (
+              <RevealItem key={p.no}>
+                <div className="card card-project group h-full">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-[15px] font-extrabold opacity-40">
+                      {p.no}
                     </span>
-                  ))}
+                    <span className="eyebrow flex items-center gap-2">
+                      {p.kind}
+                    </span>
+                  </div>
+                  <div className="mt-4 text-[26px] font-extrabold uppercase leading-tight md:text-[30px]">
+                    {p.title}
+                  </div>
+                  <p className="lead my-3 opacity-70">{p.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tech.map((t) => (
+                      <span key={t} className="tag">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-[11px] uppercase tracking-[0.14em]">
+                    {links.map((r) => (
+                      <a
+                        key={r.url}
+                        href={r.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 opacity-70 transition hover:opacity-100"
+                      >
+                        {r.label}
+                        <ArrowUpRight />
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </a>
-            </RevealItem>
-          ))}
+              </RevealItem>
+            );
+          })}
         </RevealGroup>
 
         {projects.length > INITIAL && (
