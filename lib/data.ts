@@ -140,7 +140,7 @@ export const experience = [
       "Shipping full-stack features across React / Next.js and Node / NestJS / Spring Boot. Setting up CI/CD pipelines and containerised deploys on AWS, Azure, GCP and VPS servers, and building AI features backed by RAG systems and n8n automation. Also running Microsoft 365 administration — Intune, Entra ID, email migrations and account management — and delivering client sites on WordPress and Shopify.",
     bullets: [
       "Build and ship full-stack features across React, Next.js and Vue front-ends and Node, NestJS and Spring Boot services.",
-      "Containerise applications with Docker and run deployments on Kubernetes across AWS, Azure, GCP and self-managed VPS servers, with GitHub Actions CI/CD on Linux.",
+      "Containerise applications with Docker and deploy to AWS, Azure and GCP, and run Kubernetes on self-managed VPS servers, with GitHub Actions CI/CD on Linux.",
       "Develop AI-powered features using RAG systems and LLM APIs (OpenAI, Gemini), and automate internal workflows with n8n.",
       "Administer Microsoft 365, including Intune device management, Entra ID, email migrations and account provisioning.",
       "Deliver and maintain client websites on WordPress and Shopify.",
@@ -185,7 +185,7 @@ export const experience = [
 
 /** Concise professional summary for the CV — experience length is derived. */
 export function cvSummary(): string {
-  return `Full-stack software engineer with ${yearsSince()}+ years of experience at Irusri Group, building web, mobile and AI-powered products. Works across React, Next.js, Vue, Node, NestJS and Spring Boot, with hands-on experience in Docker, Kubernetes, Linux and CI/CD on AWS, Azure, GCP and self-managed VPS servers. Also builds RAG-based AI features, automates workflows with n8n, delivers WordPress and Shopify sites, and administers Microsoft 365 (Intune, Entra ID, email migrations). BSc (Hons) in Software Engineering, SLIIT. Solid grounding in OOP, data structures, REST API design and agile delivery.`;
+  return `Full-stack software engineer with ${yearsSince()}+ years of experience at Irusri Group, building web, mobile and AI-powered products. Works across React, Next.js, Vue, Node, NestJS and Spring Boot, with hands-on experience in Docker, Linux and CI/CD across AWS, Azure and GCP, plus Kubernetes on self-managed VPS servers. Also builds RAG-based AI features, automates workflows with n8n, delivers WordPress and Shopify sites, and administers Microsoft 365 (Intune, Entra ID, email migrations). BSc (Hons) in Software Engineering, SLIIT. Solid grounding in OOP, data structures, REST API design and agile delivery.`;
 }
 
 export const education = [
