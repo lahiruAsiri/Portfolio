@@ -8,6 +8,8 @@ export const profile = {
   githubHandle: "/lahiruAsiri",
   linkedin: "https://www.linkedin.com/in/lahiru-asiri-maddumage",
   linkedinHandle: "/lahiru-asiri-maddumage",
+  website: "https://www.lahiruasiri.me",
+  websiteLabel: "lahiruasiri.me",
   resume: "/Lahiru-Asiri-CV.pdf",
 };
 
@@ -48,7 +50,7 @@ export function humanDuration(from: string): string {
 export function heroSummary(): string {
   return `Full-stack engineer building web, mobile and AI-driven products — React, Next.js and Vue on the front end, Node, NestJS and Spring Boot on the back end, React Native on mobile. ${humanDuration(
     roleStart
-  )} into an associate role at Irusri Group, working across DevOps and CI/CD on AWS and Azure, RAG systems, n8n automation and Microsoft 365 administration. BSc (Hons) in Software Engineering, SLIIT.`;
+  )} into an associate role at Irusri Group, working across DevOps and CI/CD on AWS, Azure, GCP and VPS, RAG systems, n8n automation and Microsoft 365 administration. BSc (Hons) in Software Engineering, SLIIT.`;
 }
 
 export const stats = [
@@ -72,6 +74,7 @@ export const marquee = [
   "Docker",
   "AWS",
   "Azure",
+  "GCP",
   "Microsoft 365",
   "Intune",
   "WordPress",
@@ -83,7 +86,7 @@ export const marquee = [
 export const about = {
   paragraphs: [
     "I'm a Software Engineering graduate from SLIIT with a strong foundation in OOP, data structures and agile delivery. My passion for building started at Ananda College, Colombo — today I ship production features across the stack, from React, Next.js and Vue front-ends to Node, NestJS and Spring Boot services.",
-    "Beyond product work I set up DevOps and CI/CD automation on AWS and Azure, build AI-powered features with RAG systems and LLM APIs, automate workflows with n8n, deliver client sites on WordPress and Shopify, and handle Microsoft 365 administration — Intune device management, Entra ID, email migrations and account management.",
+    "Beyond product work I set up DevOps and CI/CD automation across AWS, Azure, GCP and self-managed VPS servers, build AI-powered features with RAG systems and LLM APIs, automate workflows with n8n, deliver client sites on WordPress and Shopify, and handle Microsoft 365 administration — Intune device management, Entra ID, email migrations and account management.",
   ],
 };
 
@@ -102,7 +105,7 @@ export const stackGroups = [
   },
   {
     title: "DevOps & Cloud",
-    items: ["CI/CD Pipelines", "Docker", "GitHub Actions", "AWS", "Azure", "Linux"],
+    items: ["Docker", "Kubernetes", "Linux", "CI/CD Pipelines", "GitHub Actions", "AWS", "Azure", "GCP", "VPS"],
   },
   {
     title: "Microsoft 365 & Endpoint",
@@ -114,7 +117,7 @@ export const stackGroups = [
   },
   {
     title: "Mobile",
-    items: ["React Native", "Expo", "Nativewind", "Kotlin"],
+    items: ["React Native", "Expo", "Nativewind"],
   },
   {
     title: "Databases",
@@ -122,28 +125,39 @@ export const stackGroups = [
   },
   {
     title: "Languages & Tools",
-    items: ["Java", "Python", "Kotlin", "C / C++", "PHP", "Git / GitHub", "Postman", "Figma"],
+    items: ["Java", "Python", "C / C++", "PHP", "Git / GitHub", "Postman", "Figma"],
   },
 ];
 
 export const experience = [
   {
-    period: "Nov 2025 — Present",
+    period: "Nov 2025 - Present",
     length: `${monthsSince(roleStart)} mos`,
     role: "Associate Software Engineer",
     company: "Irusri Group",
-    type: "Full-time · Hybrid · Colombo, Sri Lanka",
+    type: "Full-time, Colombo, Sri Lanka",
     detail:
-      "Shipping full-stack features across React / Next.js and Node / NestJS / Spring Boot. Setting up CI/CD pipelines and containerised deploys on AWS and Azure, and building AI features backed by RAG systems and n8n automation. Also running Microsoft 365 administration — Intune, Entra ID, email migrations and account management — and delivering client sites on WordPress and Shopify.",
+      "Shipping full-stack features across React / Next.js and Node / NestJS / Spring Boot. Setting up CI/CD pipelines and containerised deploys on AWS, Azure, GCP and VPS servers, and building AI features backed by RAG systems and n8n automation. Also running Microsoft 365 administration — Intune, Entra ID, email migrations and account management — and delivering client sites on WordPress and Shopify.",
+    bullets: [
+      "Build and ship full-stack features across React, Next.js and Vue front-ends and Node, NestJS and Spring Boot services.",
+      "Containerise applications with Docker and run deployments on Kubernetes across AWS, Azure, GCP and self-managed VPS servers, with GitHub Actions CI/CD on Linux.",
+      "Develop AI-powered features using RAG systems and LLM APIs (OpenAI, Gemini), and automate internal workflows with n8n.",
+      "Administer Microsoft 365, including Intune device management, Entra ID, email migrations and account provisioning.",
+      "Deliver and maintain client websites on WordPress and Shopify.",
+    ],
     stack: [
       "React",
       "Next.js",
       "NestJS",
       "Spring Boot",
-      "CI/CD",
       "Docker",
+      "Kubernetes",
+      "Linux",
+      "CI/CD",
       "AWS",
       "Azure",
+      "GCP",
+      "VPS",
       "RAG Systems",
       "n8n",
       "Microsoft 365",
@@ -153,112 +167,161 @@ export const experience = [
     ],
   },
   {
-    period: "Jan 2025 — Nov 2025",
+    period: "Jan 2025 - Nov 2025",
     length: "11 mos",
     role: "Software Engineer Intern",
     company: "Irusri Group",
-    type: "Internship · Hybrid · Colombo, Sri Lanka",
+    type: "Internship, Colombo, Sri Lanka",
     detail:
-      "First professional role — built web application features with the MERN stack, and learned production workflows, Git-based collaboration, code review and agile delivery.",
+      "First professional role, building web application features with the MERN stack and learning production workflows, Git-based collaboration, code review and agile delivery.",
+    bullets: [
+      "Built web application features end to end with the MERN stack (MongoDB, Express, React, Node).",
+      "Followed production workflows: Git-based collaboration, pull-request code review and agile delivery.",
+      "Contributed to REST API design and front-end integration.",
+    ],
     stack: ["React", "Node.js", "Express", "MongoDB", "Git", "REST APIs"],
   },
 ];
 
+/** Concise professional summary for the CV — experience length is derived. */
+export function cvSummary(): string {
+  return `Full-stack software engineer with ${yearsSince()}+ years of experience at Irusri Group, building web, mobile and AI-powered products. Works across React, Next.js, Vue, Node, NestJS and Spring Boot, with hands-on experience in Docker, Kubernetes, Linux and CI/CD on AWS, Azure, GCP and self-managed VPS servers. Also builds RAG-based AI features, automates workflows with n8n, delivers WordPress and Shopify sites, and administers Microsoft 365 (Intune, Entra ID, email migrations). BSc (Hons) in Software Engineering, SLIIT. Solid grounding in OOP, data structures, REST API design and agile delivery.`;
+}
+
 export const education = [
   {
-    title: "BSc (Hons) in Information Technology",
-    meta: "Specialising in Software Engineering · Graduate",
-    place: "Sri Lanka Institute of Information Technology (SLIIT), Malabe",
+    title:
+      "Bachelor of Science (Honours) in Information Technology, Specializing in Software Engineering",
+    meta: "Graduate",
+    place: "Sri Lanka Institute of Information Technology (SLIIT), Malabe, Sri Lanka",
+    period: "2022 - 2026",
   },
   {
-    title: "GCE Advanced Level — Physical Science",
-    meta: "Physics · Chemistry · ICT",
-    place: "Ananda College, Colombo (2011 — 2019)",
+    title: "GCE Advanced Level & GCE Ordinary Level",
+    meta: "Advanced Level: Physical Science Stream with ICT",
+    place: "Ananda College, Colombo, Sri Lanka",
+    period: "",
   },
 ];
 
-export const projects = [
+type Project = {
+  no: string;
+  kind: string;
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+  repos?: { label: string; url: string }[];
+  /** set false to keep on the site but leave out of the CV */
+  cv?: boolean;
+};
+
+export const projects: Project[] = [
   {
     no: "01",
+    kind: "Research · AI",
+    title: "SmartBus Transit App",
+    description:
+      "Research project: a real-time public-transport app with live bus tracking, crowd forecasting for future time slots, and ETA prediction. Predictions come from a Bus ETA Engine (XGBoost Regressor) and a Hybrid Crowd Forecasting Engine (Random Forest Regressor); an edge-optimised NLP Intent Engine (TF-IDF with balanced Logistic Regression) answers transit queries offline at millisecond latency.",
+    tech: ["React Native", "Expo", "TypeScript", "Firebase", "Python", "Flask", "scikit-learn", "XGBoost"],
+    link: "https://github.com/lahiruAsiri/SmartBusApp",
+  },
+  {
+    no: "02",
+    kind: "Microservices · DevSecOps",
+    title: "NovaTech E-Commerce Platform",
+    description:
+      "Full-stack e-commerce platform. The backend is split into NestJS microservices (an API gateway plus admin, product, order and notification services) with JWT auth, Swagger docs and Prisma on Azure SQL; a Next.js frontend consumes them through the gateway. Each service has a GitHub Actions pipeline that builds a Docker image, runs a Snyk vulnerability scan and a SonarCloud quality gate, and deploys to Azure Web Apps.",
+    tech: ["NestJS", "Next.js", "TypeScript", "Microservices", "API Gateway", "Prisma", "Docker", "GitHub Actions", "Snyk", "SonarCloud", "Azure"],
+    link: "https://github.com/lahiruAsiri/NovaTech-Backend",
+    repos: [
+      { label: "Backend", url: "https://github.com/lahiruAsiri/NovaTech-Backend" },
+      { label: "Frontend", url: "https://github.com/lahiruAsiri/NovaTech-Frontend" },
+    ],
+  },
+  {
+    no: "03",
     kind: "Web App",
     title: "Book Factory Management System",
     description:
-      "MERN application with inventory, material, order and transport management modules for a book factory.",
+      "MERN-stack web application for a book factory, covering inventory, raw-material, order and transport management. Includes role-based access, low-stock alerts and reporting dashboards.",
     tech: ["MongoDB", "Express", "React", "Node"],
     link: "https://github.com/lahiruAsiri/Book-Factory-Management-System",
   },
   {
-    no: "02",
+    no: "04",
     kind: "AI · Web",
     title: "ProMentor Education",
     description:
-      "Drag-and-drop coding mentor with automated code explanations and corrections, powered by the Gemini API.",
+      "Interactive coding-mentor platform with a drag-and-drop block editor. Uses the Gemini API to generate step-by-step explanations, detect mistakes and suggest corrections in real time for beginner programmers.",
     tech: ["React", "Node", "Express", "Gemini API"],
     link: "https://github.com/lahiruAsiri/ProMentor-Education-Application",
   },
   {
-    no: "03",
+    no: "05",
     kind: "Mobile",
     title: "MomCare App",
     description:
-      "Mobile app for pregnant women and new mothers — baby growth tracking, health tips, doctor access and clinic reminders.",
+      "Cross-platform mobile app for expectant and new mothers. Tracks baby growth, delivers personalised health tips and reminders, and helps users find doctors and manage clinic visits from a single place.",
     tech: ["React Native", "Node", "Express", "MongoDB"],
     link: "https://github.com/lahiruAsiri/MomCare-App",
   },
   {
-    no: "04",
+    no: "06",
     kind: "Web App",
     title: "Smart Waste Management",
     description:
-      "Tracks bin levels, optimises collection routes and reports real-time updates to reduce operational cost.",
+      "Web platform that monitors bin fill-levels, optimises collection routes and pushes real-time status updates, cutting fuel use and operational cost for waste-collection operators.",
     tech: ["React", "Spring Boot"],
     link: "https://github.com/lahiruAsiri/Smart-Waste-Management-System",
   },
   {
-    no: "05",
+    no: "07",
     kind: "Java · MVC",
     title: "Vehicle Service Station System",
     description:
-      "Web app for a vehicle service station — account creation, vehicle management and transport service tracking.",
+      "Java MVC web application for a vehicle service station, handling customer accounts, vehicle records, service scheduling and transport-service tracking through an intuitive interface.",
     tech: ["Java", "MVC", "Apache Tomcat", "JavaScript"],
     link: "https://github.com/lahiruAsiri/Vehicle-And-Fuel-Management-System",
   },
   {
-    no: "06",
+    no: "08",
     kind: "Game",
     title: "ShadowStrike Mobile Game",
     description:
-      "Mobile game with score persistence, intuitive gameplay mechanics and a user-friendly interface.",
-    tech: ["Kotlin", "Android"],
+      "Android game with responsive gameplay mechanics, persistent high-score storage and a clean, user-friendly interface.",
+    tech: ["Android", "Java"],
     link: "https://github.com/lahiruAsiri/ShadowStrike-Mobile-Game",
+    cv: false,
   },
   {
-    no: "07",
+    no: "09",
     kind: "Mobile",
     title: "Task Manager App",
     description:
-      "CRUD-based task manager with a stress-relief companion — intuitive UI, robust backend services and smooth cross-device performance.",
-    tech: ["Kotlin", "Android"],
+      "Android app pairing a CRUD task manager with a stress-relief companion. Focuses on an intuitive UI, reliable local persistence and smooth performance across devices.",
+    tech: ["Android", "Java"],
     link: "https://github.com/lahiruAsiri/Task-Manager-App",
+    cv: false,
   },
 ];
 
 export const certifications = [
-  { title: "AI/ML Engineer — Stage 1", meta: "SLIIT · 2024", image: "/certificates/ai-ml-engineer-stage-1.jpg" },
-  { title: "Programming in Python", meta: "Univ. of Moratuwa · 2024", image: "/certificates/programming-in-python.jpg" },
-  { title: "Web Development", meta: "Univ. of Moratuwa · 2024", image: "/certificates/web-development.jpg" },
-  { title: "JS Algorithms & Data Structures", meta: "freeCodeCamp · 2024", image: "/certificates/js-algorithms-data-structures.jpg" },
-  { title: "Responsive Web Design", meta: "freeCodeCamp · 2024", image: "/certificates/responsive-web-design.jpg" },
-  { title: "Problem Solving", meta: "HackerRank · 2024", image: "/certificates/problem-solving.jpg" },
-  { title: "Java (Basic)", meta: "HackerRank · 2024", image: "/certificates/java-basic.jpg" },
-  { title: "JavaScript (Basic)", meta: "HackerRank · 2024", image: "/certificates/javascript-basic.jpg" },
-  { title: "Python (Basic)", meta: "HackerRank · 2024", image: "/certificates/python-basic.jpg" },
-  { title: "CSS (Basic)", meta: "HackerRank · 2024", image: "/certificates/css-basic.jpg" },
-  { title: "SQL Intermediate", meta: "Sololearn · 2024", image: "/certificates/sql-intermediate.jpg" },
-  { title: "JavaScript Intermediate", meta: "Sololearn · 2024", image: "/certificates/javascript-intermediate.jpg" },
-  { title: "Java Intermediate", meta: "Sololearn · 2024", image: "/certificates/java-intermediate.jpg" },
-  { title: "Angular", meta: "Sololearn · 2024", image: "/certificates/angular.jpg" },
-  { title: "Front-end for Beginners", meta: "Sololearn · 2024", image: "/certificates/front-end-for-beginners.jpg" },
+  { title: "AI/ML Engineer (Stage 1)", meta: "SLIIT · 2024", issuer: "SLIIT", year: "2024", id: "s66947u3d9", image: "/certificates/ai-ml-engineer-stage-1.jpg" },
+  { title: "Programming in Python", meta: "Univ. of Moratuwa · 2024", issuer: "University of Moratuwa (CODL)", year: "2024", id: "f13BPvg81O", image: "/certificates/programming-in-python.jpg" },
+  { title: "Web Development", meta: "Univ. of Moratuwa · 2024", issuer: "University of Moratuwa (CODL)", year: "2024", id: "uupgfDk114", image: "/certificates/web-development.jpg" },
+  { title: "JS Algorithms & Data Structures", meta: "freeCodeCamp · 2024", issuer: "freeCodeCamp", year: "2024", id: "freecodecamp.org/certification/Lahiru_Asiri/javascript-algorithms-and-data-structures-v8", image: "/certificates/js-algorithms-data-structures.jpg" },
+  { title: "Responsive Web Design", meta: "freeCodeCamp · 2024", issuer: "freeCodeCamp", year: "2024", id: "freecodecamp.org/certification/Lahiru_Asiri/responsive-web-design", image: "/certificates/responsive-web-design.jpg" },
+  { title: "Problem Solving (Basic)", meta: "HackerRank · 2024", issuer: "HackerRank", year: "2024", id: "DB4F0B055A8A", image: "/certificates/problem-solving.jpg" },
+  { title: "Java (Basic)", meta: "HackerRank · 2024", issuer: "HackerRank", year: "2024", id: "023277F62E09", image: "/certificates/java-basic.jpg" },
+  { title: "JavaScript (Basic)", meta: "HackerRank · 2024", issuer: "HackerRank", year: "2024", id: "392DC6A2AF1B", image: "/certificates/javascript-basic.jpg" },
+  { title: "Python (Basic)", meta: "HackerRank · 2024", issuer: "HackerRank", year: "2024", id: "EFE7659B2E12", image: "/certificates/python-basic.jpg" },
+  { title: "CSS (Basic)", meta: "HackerRank · 2024", issuer: "HackerRank", year: "2024", id: "45BB4D7FFCD1", image: "/certificates/css-basic.jpg" },
+  { title: "SQL (Intermediate)", meta: "Sololearn · 2024", issuer: "Sololearn", year: "2024", id: "CC-NVNMJESI", image: "/certificates/sql-intermediate.jpg" },
+  { title: "JavaScript (Intermediate)", meta: "Sololearn · 2024", issuer: "Sololearn", year: "2024", id: "CC-D7MLH3MO", image: "/certificates/javascript-intermediate.jpg" },
+  { title: "Java (Intermediate)", meta: "Sololearn · 2024", issuer: "Sololearn", year: "2024", id: "CC-NLH6S3TI", image: "/certificates/java-intermediate.jpg" },
+  { title: "Angular", meta: "Sololearn · 2024", issuer: "Sololearn", year: "2024", id: "CC-4JBS5C5O", image: "/certificates/angular.jpg" },
+  { title: "Front-end for Beginners", meta: "Sololearn · 2024", issuer: "Sololearn", year: "2024", id: "CC-ATRX0O34", image: "/certificates/front-end-for-beginners.jpg" },
 ];
 
 export const designSkills = [
