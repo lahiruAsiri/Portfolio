@@ -10,8 +10,8 @@ export const profile = {
   linkedinHandle: "/lahiru-asiri-maddumage",
   website: "https://www.lahiruasiri.me",
   websiteLabel: "lahiruasiri.me",
-  // live CV page (always up to date; has a print / save-as-PDF button)
-  resume: "/cv",
+  // generated on the server from this file (app/Lahiru-Asiri-CV.pdf/route.ts)
+  resume: "/Lahiru-Asiri-CV.pdf",
 };
 
 /** Career start (first role) — drives "years in industry". */
