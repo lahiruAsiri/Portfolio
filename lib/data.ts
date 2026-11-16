@@ -10,7 +10,8 @@ export const profile = {
   linkedinHandle: "/lahiru-asiri-maddumage",
   website: "https://www.lahiruasiri.me",
   websiteLabel: "lahiruasiri.me",
-  resume: "/Lahiru-Asiri-CV.pdf",
+  // live CV page (always up to date; has a print / save-as-PDF button)
+  resume: "/cv",
 };
 
 /** Career start (first role) — drives "years in industry". */
@@ -46,7 +47,7 @@ export function humanDuration(from: string): string {
   return parts.join(" ");
 }
 
-/** Hero paragraph — the role duration is computed at build time. */
+/** Hero paragraph — the role duration is recomputed daily (ISR). */
 export function heroSummary(): string {
   return `Full-stack engineer building web, mobile and AI-driven products — React, Next.js and Vue on the front end, Node, NestJS and Spring Boot on the back end, React Native on mobile. ${humanDuration(
     roleStart
@@ -121,7 +122,7 @@ export const stackGroups = [
   },
   {
     title: "Databases",
-    items: ["MongoDB", "PostgreSQL", "MySQL", "Oracle", "Redis"],
+    items: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
     title: "Languages & Tools",
