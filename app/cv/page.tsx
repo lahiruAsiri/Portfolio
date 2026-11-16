@@ -10,6 +10,9 @@ import {
   certifications,
 } from "@/lib/data";
 
+// Re-render daily so the experience length in the summary stays current.
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Lahiru Asiri - CV",
   description: "Curriculum vitae of Lahiru Asiri, Associate Software Engineer.",
