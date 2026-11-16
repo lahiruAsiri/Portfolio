@@ -76,6 +76,7 @@ export default function Nav() {
 
           <a
             href={profile.resume}
+            download
             className="ml-1 hidden rounded-full bg-white px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink transition hover:opacity-80 md:block"
           >
             Résumé
@@ -129,6 +130,7 @@ export default function Nav() {
             ))}
             <a
               href={profile.resume}
+              download
               onClick={() => setOpen(false)}
               className="mt-1 rounded-xl bg-white px-4 py-3 text-center text-[12px] font-semibold uppercase tracking-[0.16em] text-ink"
             >
