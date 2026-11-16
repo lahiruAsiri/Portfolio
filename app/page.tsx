@@ -11,6 +11,10 @@ import DesignSkills from "@/components/DesignSkills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+// Re-render daily so "years in industry" / role duration stay current
+// (otherwise they freeze at the date of the last deploy).
+export const revalidate = 86400;
+
 export default function Home() {
   return (
     <>
